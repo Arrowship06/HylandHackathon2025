@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://www.desmos.com/api/v1.10/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Study Room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Welcome to the Virtual Study Room</h1>
+        <div id="options">
+            <button id="create-room">Create Room</button>
+            <button id="join-room">Join Room</button>
+        </div>
+        <div id="room-code-input" style="display: none;">
+            <input type="text" id="room-code" placeholder="Enter Room Code">
+            <button id="join">Join</button>
+        </div>
+        <!-- Room view will be dynamically shown after joining a room -->
+        <div id="room-view" style="display: none;">
+            <h2 id="room-title">Room: </h2>
+            <div id="toolbar">
+                <button id="draw-mode">Draw</button>
+                <button id="add-rectangle">Rectangle</button>
+                <button id="clear-drawing">Clear Drawing</button>
+                <button id="add-circle">Circle</button>
+                <button id="open-calculator">Open Calculator</button>
+                
+               
+
+            </div>
+            <canvas id="whiteboard" style="border: 1px solid black;"></canvas>
+            <div id="calculator-container" style="display: none; width: 600px; height: 400px; border: 1px solid black;"></div>
+
+        </div>
+    </div>
+
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
