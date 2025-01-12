@@ -1,14 +1,128 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
+
 #app {
   margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 #whiteboard {
   margin-top: 20px;
   width: 90%;
   height: 500px;
 }
+#create-room {
+font-family: "Courier New", Courier, monospace;
+background-color: #2e96d7;
+color: white;
+height: 40px;
+width: 180px;
+font-size: 15px;
+border-radius: 5px;
+border: 0px
+  }
+#create-room:hover{
+background-color: #000b86;
+}
+#create-room:active{
+background-color: #0d0086;
+height: 38px;
+width: 170px;
+}
+#join-room{
+height: 40px;
+width: 180px;
+background-color: rgb(145, 234, 158);;
+border-radius: 5px;
+border: 0px;   
+font-family: "Courier New", Courier, monospace;
+font-size: 15px;
+margin-top: 4%;
+}   
+#join-room:hover{
+background-color: rgb(71, 171, 86);
+}
+#join-room:active{
+background-color: rgb(71, 171, 86);
+height: 38px;
+width: 170px
+}
+#room-code{
+background-color: #d6ffdc;
+font-family: "Courier New", Courier, monospace;
+border-radius: 5px;
+border: 0px
+}
+
+#draw-mode{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #ab0000;
+  color: #ab0000;
+}
+#add-rectangle{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #000f63;
+  color: #000f63;
+}
+#add-circle{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #006303;
+  color: #006303;
+}
+#clear-drawing{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #a9ac00;
+  color: #a9ac00;
+}
+#open-calculator{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #090086;
+  color: #1b0086;
+}
+
+h1{
+  font-family: "Georgia", serif;
+  font-weight: lighter;
+  letter-spacing: -1px;
+  color: rgb(13, 60, 121);
+  line-height: 28px 
+    }
+h2{
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-size: 17.3px;
+  font-weight: lighter;
+  letter-spacing: -1px;
+    }
+h3{
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Georgia", serif;
+  font-weight: lighter;
+  letter-spacing: -1px;
+  font-weight: lighter;
+    }
+
+    .homepage {
+      position: relative;
+      background-color: white;
+      border: 3px solid rgb(20, 51, 138); 
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+      padding: 10px;
+    }
+
+    #fractalbackground{
+      background-image: url('https://i.pinimg.com/736x/a2/02/a5/a202a5939166cdb0af34e5e1bb50699f.jpg');
+        }
+  
