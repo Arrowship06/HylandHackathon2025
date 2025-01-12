@@ -1,14 +1,163 @@
-body {
-  font-family: Arial, sans-serif;
+.homepage {
+  height: 400px; 
+  position: relative;
+  background-color: white;
+  border: 3px solid orange; 
+  width: 250px;
   text-align: center;
-  margin: 0;
-  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10%;
 }
-#app {
-  margin: 20px;
+
+.newroompage {
+  height: 400px; 
+  position: relative;
+  background-color: white;
+  border: 3px solid orange; 
+  width: 250px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10%;
 }
-#whiteboard {
-  margin-top: 20px;
-  width: 90%;
+
+.toolbar{
+  width:650px;
+  height: 700px;
+  background-color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+}
+
+  h1{
+    font-family: "Georgia", serif;
+    font-weight: lighter;
+    letter-spacing: -1px;
+    color: #350878;
+    line-height: 28px 
+      }
+  h2{
+    font-family: "Georgia", serif;
+    font-style: italic;
+    font-size: 17.3px;
+    font-weight: lighter;
+    letter-spacing: -1px;
+      }
+  h3{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: "Georgia", serif;
+    font-weight: lighter;
+    letter-spacing: -1px;
+    font-weight: lighter;
+      }
+    #create-room {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #92009b;
+    color: white;
+    height: 40px;
+    width: 180px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0px
+      }
+    #create-room:hover{
+    background-color: #7e0086;
+    }
+    #create-room:active{
+    background-color: #7e0086;
+    height: 38px;
+    width: 170px;
+    }
+    #to-create-room{
+    font-family: "Courier New", Courier, monospace;
+    background-color: #92009b;
+    color: white;
+    height: 40px;
+    width: 180px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0px
+}
+    #to-create-room:hover{
+    background-color: #7e0086;
+    }
+    #to-create-room:active{
+    background-color: #7e0086;
+    height: 38px;
+    width: 170px;
+    }
+  #join{
+    height: 40px;
+    width: 180px;
+    background-color: #ad4700;
+    border-radius: 5px;
+    border: 0px;   
+    font-family: "Courier New", Courier, monospace;
+    font-size: 15px;
+    margin-top: 4%;
+    }   
+    #join:hover{
+    background-color: #893800;
+    }
+    #join:active{
+    background-color: #893800;
+    height: 38px;
+    width: 170px
+    }
+  #room-code{
+  background-color: #ffdcc4;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 5px;
+  border: 0px
+}
+  #fractalbackground{
+    background-image: url('https://tinyurl.com/6ury3r3k');
+      }
+  #plainbackground{
+    background-color: black;
+    }
+  #canvastemp{
+  color: blue;
+  width: 500px;
   height: 500px;
+  margin: 5%;
+}
+#draw-mode{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #ab0000;
+  color: #ab0000;
+}
+#add-rectangle{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #000f63;
+  color: #000f63;
+}
+#add-circle{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #006303;
+  color: #006303;
+}
+#clear-drawing{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #a9ac00;
+  color: #a9ac00;
+}
+#open-calculator{
+  font-family: "Courier New", Courier, monospace;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #7e0086;
+  color: #7e0086;
 }
