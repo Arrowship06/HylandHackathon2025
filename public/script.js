@@ -86,7 +86,7 @@ function joinRoom(room) {
 
     // New button to clear drawing lines
     document.getElementById('clear-drawing').addEventListener('click', () => {
-        //linePoints = [];  // Clear the drawing lines
+        linePoints = [];  // Clear the drawing lines
         drawingLines = [];
         redrawShapes();  // Redraw shapes and drawing lines (which will now be empty)
     });
