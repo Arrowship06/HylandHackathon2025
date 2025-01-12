@@ -244,7 +244,7 @@ function joinRoom(room) {
     // Redraw all shapes and drawing lines after a resize or update
     function redrawShapes() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+        ctx.strokeStyle = 'black';
         // Redraw drawing lines
 
         //draw the last line
