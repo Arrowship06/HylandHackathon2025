@@ -232,7 +232,10 @@ function joinRoom(room) {
 
             // Emit the drawing update to the server
             if (roomCode) {
-                socket.emit('drawing', { room: roomCode, mode: 'draw', points: linePoints });
+                console.log(linePoints); console.log();
+                let drawingLines2 = drawingLines; 
+                drawingLines2.push(linePoints);
+                socket.emit('drawing', { room: roomCode, mode: 'draw', points_sets: drawingLines2 });
             }
         }
 
@@ -309,7 +312,8 @@ function joinRoom(room) {
             ctx.stroke();
         } else if (data.mode === 'draw'){
             // Handle received freehand drawing
-            linePoints = data.points;
+            console.log(data);
+            drawingLines = data.points_sets;
             redrawShapes();
         }
     });
