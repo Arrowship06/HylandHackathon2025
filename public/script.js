@@ -12,6 +12,8 @@ let roomCode = null;  // Room code variable
 let drawingLines = [];  // Store freehand drawing lines
 let linePoints = [];  // Store points for drawing
 
+
+
 // Room creation logic
 document.getElementById('create-room').addEventListener('click', () => {
     roomCode = Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -84,12 +86,19 @@ function joinRoom(room) {
 
     // New button to clear drawing lines
     document.getElementById('clear-drawing').addEventListener('click', () => {
-        linePoints = [];  // Clear the drawing lines
+        //linePoints = [];  // Clear the drawing lines
+        drawingLines = [];
         redrawShapes();  // Redraw shapes and drawing lines (which will now be empty)
     });
 
     // Event listener to handle mouse press for drawing and creating shapes
     canvas.addEventListener('mousedown', (e) => {
+        //Move the linePoints into drawingLines array
+        drawingLines.push(linePoints);
+        linePoints = [];
+        //console.log(linePoints);
+        
+        
         const rect = canvas.getBoundingClientRect();
         const x = (e.clientX - rect.left) / scale;
         const y = (e.clientY - rect.top) / scale;
@@ -153,7 +162,7 @@ function joinRoom(room) {
         if (currentMode === 'draw' && !resizingShape && !movingShape) {
             if (!drawing) {  // Only start a new line if it's not already drawing
                 drawing = true;
-                linePoints = [{ x, y }];  // Start a new line
+                //linePoints = [{ x, y }];  // Start a new line
             } else {
                 linePoints.push({ x, y });  // Continue the current line
             }
@@ -162,6 +171,10 @@ function joinRoom(room) {
 
     // Event listener for mouse release to stop resizing/moving
     canvas.addEventListener('mouseup', () => {
+        
+
+
+
         if (resizingShape) {
             isResizing = false;
             resizingShape.isSelected = false;
@@ -230,12 +243,24 @@ function joinRoom(room) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         // Redraw drawing lines
-        ctx.beginPath();
+
+        //draw the last line
+        {ctx.beginPath();
         linePoints.forEach((point, index) => {
             if (index === 0) ctx.moveTo(point.x, point.y);
             else ctx.lineTo(point.x, point.y);
         });
-        ctx.stroke();
+        ctx.stroke();}
+
+        //draw previous lines stored in 
+        for (let i = 0; i < drawingLines.length; i++) {
+            ctx.moveTo(drawingLines[i].x,drawingLines[i].y)
+            ctx.beginPath();
+            drawingLines[i].forEach((point) => {
+                ctx.lineTo(point.x, point.y);
+            });
+            ctx.stroke();
+        }
 
         // Redraw all shapes
         shapes.forEach((shape) => {

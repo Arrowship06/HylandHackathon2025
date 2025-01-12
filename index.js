@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
 
     // Handle drawing events
     socket.on('drawing', (data) => {
-        console.log(`Received drawing data:`, data);
+        //console.log(`Received drawing data:`, data);
         if (data.room) {
             io.to(data.room).emit('drawing', data);  // Emit drawing event to specific room
         }
