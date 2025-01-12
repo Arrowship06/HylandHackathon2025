@@ -11,8 +11,9 @@ let scale = 1;  // Scale factor for resizing
 let roomCode = null;  // Room code variable
 let drawingLines = [];  // Store freehand drawing lines
 let linePoints = [];  // Store points for drawing
-
-
+let desmos = false; //
+let calculator = null;
+let calculatorContainer;
 
 // Room creation logic
 document.getElementById('create-room').addEventListener('click', () => {
@@ -334,16 +335,37 @@ function joinRoom(room) {
 
       // Function to initialize the Desmos Calculator
       function initializeCalculator() {
-          const calculatorContainer = document.getElementById('calculator-container');
+          calculatorContainer = document.getElementById('calculator-container');
+          
+          socket.emit()
 
           // Check if the calculator is already initialized
           if (!calculatorContainer.calculator) {
-              const calculator = Desmos.GraphingCalculator(calculatorContainer, {
+              calculator = Desmos.GraphingCalculator(calculatorContainer, {
                   keypad: true,
               });
+              //if (roomCode) {
+                //socket.emit('desmos-update', { room: roomCode, calculator});}
               calculatorContainer.calculator = calculator; // Store it to avoid reinitialization
           }
       }
+      function sync_desmos() {
+        if (calculatorContainer) {
+            calculator = Desmos.GraphingCalculator(calculatorContainer, {
+                keypad: true,
+            });
+            if (roomCode) {
+                 socket.emit('desmos-update', { room: roomCode, calculator});
+            }
+        }
+        else {
+            //no calculator yet
+        }
+      }
+      setTimeout(sync_desmos, 10000)
+      socket.on('desmos', (calc_data)=>{calculatorContainer.calculator = calc_data});
+
+
 
 
 

@@ -44,3 +44,10 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+io.on('desmos-update', (calc_data) => { 
+    console.log(calc_data);
+    if (calc_data.room) {
+        io.to(calc_data.room).emit('desmos', calc_data);  // Emit calculator event to specific room
+    }
+});
